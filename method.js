@@ -6,8 +6,26 @@ $(document).ready(function(){
 
    $('#btnKoduj').click(function(){
         let dane = $('#inputDane').val();
+        var metoda;
        if(checkAmount(dane)){
-        //    console.log('dobre dane');
+              
+        $('.asd a').each(function(){
+            if($(this).hasClass('active'))
+            metoda=$(this).attr('id');
+        });
+        switch(metoda) {
+            case 'kontrola':
+                kontrolaParzystosci()
+              break;
+            case 'hamming':
+                kodowanieHamminga()
+              break;
+            case 'crc':
+                crc()
+              break;
+            default:
+              // code block
+          }
        } 
    });
 
