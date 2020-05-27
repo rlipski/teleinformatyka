@@ -4,7 +4,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Detekcja i korekcja błędów</title>
 
-	<script type="text/javascript" src="index.js"></script>
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 	<link rel="stylesheet" href="index-style.css">
 
 </head>
@@ -20,11 +22,53 @@
 		</nav>
 	</header>
 	<main>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ullam perspiciatis ipsa veritatis vel ab hic placeat non culpa doloribus, distinctio facilis animi necessitatibus adipisci quia numquam ratione dolorum sit.
+		<div class="container">
+			<div class="row">
+				<div class="col-12 py-4 border-bottom border-dark">
+					<h2>NADAWANIE</h2>
+					<p>Dane wejściowe: <input id="inputDane" type="text"  size="75"><button id="btnKoduj" type="button" class="ml-2 mb-2 btn btn-primary">Koduj</button></p> 
+					<p>Liczba bitów: <input id="inputIle" type="number" step="8" min="8" max="64" width="20" > <button id="btnGeneruj" type="button" class="ml-2 mb-2 btn btn-primary">Generuj</button> </p>
+					<p>Dane zakodowane: <span></span> </p>
+				</div>
+
+				<div class="col-12 py-4 border-bottom border-dark">
+					<h2>ODBIÓR</h2>
+					<p>Dane zakodowane: <span></span> <button type="button" class="ml-2 mb-2 btn btn-primary">Dekoduj</button></p> 
+					<p>Liczba bitów: <input type="number" step="1" min="1" max="64" width="20" > <button type="button" class="ml-2 mb-2 btn btn-primary">Zakłóć</button> </p>
+					<p>Dane zakodowane po korekcji: <span></span> </p>
+					<p>Dane wyjściowe: <span></span> </p>
+				</div>
+				<div class="col-12 py-4 border-bottom border-dark">
+					<h2>Podsumowanie</h2>
+					<p>Przesłane bity danych: <span></span></p> 
+					<p>Przesłane bity kontrolne: <span></span> </p>
+					<p>Błędy wykryte: <span></span> </p>
+					<p>Błędy skorygowane:  <span></span> </p>
+					<p>Błędy niewykryte: <span></span></p>
+				</div>
+				<div class="col-12 py-4 legend" >
+					<h2>Legenda</h2>
+					<p>poprawny bit danych: <button class="btn btn-success" disabled></button> </p>
+					<p>przekłamany bit danych: <button class="btn btn-danger" disabled></button> </p>
+					<p>niepewny bit danych: <button class="btn btn-warning" disabled></button> </p>
+					<p>poprawny bit redundantny:  <button class="btn btn-primary" disabled></button> </p>
+					<p>przekłamany bit redundantny: <button class="btn btn-dark" disabled></button> </p>
+					<p>niepewny bit redundantny: <button class="btn btn-secondary" disabled></button>  </p>
+				</div>
+			</div>
+		</div>
 
 	</main>
 	<footer>
 		&copy; 2020
 	</footer>
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="index.js"></script>
+	<script type="text/javascript" src="method.js"></script>
 </body>
 </html>
