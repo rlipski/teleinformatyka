@@ -53,4 +53,5 @@ function viewCode(code){
         strign +=code[i];
     }
     $('#daneZakodowane').text(strign);
+    $('#daneZakodowane1').text(strign);
 }
