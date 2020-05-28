@@ -8,20 +8,21 @@ $(document).ready(function(){
         let dane = $('#inputDane').val();
         var metoda;
        if(checkAmount(dane)){
-              
+
+        dane= stringToArray(dane);
         $('.asd a').each(function(){
             if($(this).hasClass('active'))
             metoda=$(this).attr('id');
         });
         switch(metoda) {
             case 'kontrola':
-                kontrolaParzystosci()
+                kontrolaParzystosci(dane)
               break;
             case 'hamming':
-                kodowanieHamminga()
+                kodowanieHamminga(dane)
               break;
             case 'crc':
-                crc()
+                crc(dane)
               break;
             default:
               // code block
@@ -54,4 +55,16 @@ $(document).ready(function(){
         }
         return true;
     }
+
+    /*Zamaina stringów na tablice int*/
+    function stringToArray(string) {
+        var dane = new Array(string.length);
+    
+        for(var i=0; i<string.length; i++) {
+            dane[i] = parseInt(string[i]);
+        }
+        
+        return dane;
+    }
+    
 })
