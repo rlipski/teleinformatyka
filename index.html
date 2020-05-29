@@ -17,7 +17,10 @@
 			<ul class="asd">
 				<li><a data-method="kontrolaParzystosci" href="#" id="kontrola">Kontrola parzystości</a></li>
 				<li><a data-method="kodowanieHamminga" href="#" id="hamming">Kodowanie Hamminga</a></li>
-				<li><a data-method="crc16"  href="#" id="crc">CRC-16</a></li>
+				<li><a data-method="crc12"  href="#" id="crc12">CRC-12</a></li>
+				<li><a data-method="crc16"  href="#" id="crc16">CRC-16</a></li>
+				<li><a data-method="crc32"  href="#" id="crc32">CRC-32</a></li>
+				<li><a data-method="crcSDLC"  href="#" id="crcSDLC">CRC-SDLC</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -26,21 +29,21 @@
 			<div class="row">
 				<div class="col-12 py-4 border-bottom border-dark">
 					<h2>NADAWANIE</h2>
-					<p>Dane wejściowe: <input id="inputDane" type="text"  size="75"><button id="btnKoduj" type="button" class="ml-2 mb-2 btn btn-primary">Koduj</button></p> 
+					<p>Dane wejściowe: <input id="inputDane" type="text"  size="75"><button id="btnKoduj" type="button" class="ml-2 mb-2 btn btn-primary">Koduj</button></p>
 					<p>Liczba bitów: <input id="inputIle" type="number" step="8" min="8" max="64" width="20" > <button id="btnGeneruj" type="button" class="ml-2 mb-2 btn btn-primary">Generuj</button> </p>
 					<p>Dane zakodowane: <span id="daneZakodowane1"></span> </p>
 				</div>
 
 				<div class="col-12 py-4 border-bottom border-dark">
 					<h2>ODBIÓR</h2>
-					<p>Dane zakodowane: <span id="daneZakodowane"></span> <button type="button" id="btnDekoduj" class="ml-2 mb-2 btn btn-primary">Dekoduj</button></p> 
+					<p>Dane zakodowane: <span id="daneZakodowane"></span> <button type="button" id="btnDekoduj" class="ml-2 mb-2 btn btn-primary">Dekoduj</button></p>
 					<p>Liczba bitów: <input id='inputZak' type="number" step="1" min="1" max="64" width="20" > <button id="btnZak" type="button" class="ml-2 mb-2 btn btn-primary">Zakłóć</button> </p>
 					<p>Dane zakodowane po korekcji: <span id="danePoKorekcji"></span> </p>
 					<p>Dane wyjściowe: <span class="" id="daneWyjściowe"></span> </p>
 				</div>
 				<div class="col-12 py-4 border-bottom border-dark">
 					<h2>Podsumowanie</h2>
-					<p>Przesłane bity danych: <span id='przeslaneBity'></span></p> 
+					<p>Przesłane bity danych: <span id='przeslaneBity'></span></p>
 					<p>Przesłane bity kontrolne: <span id='przeslaneBitykontrolne'></span> </p>
 					<p>Błędy wykryte: <span id='bledyWykryteBity'></span> </p>
 					<p>Błędy skorygowane:  <span id='bledyskorygowane'></span> </p>
