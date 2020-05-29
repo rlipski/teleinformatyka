@@ -33,18 +33,18 @@
 
 				<div class="col-12 py-4 border-bottom border-dark">
 					<h2>ODBIÓR</h2>
-					<p>Dane zakodowane: <span id="daneZakodowane"></span> <button type="button" class="ml-2 mb-2 btn btn-primary">Dekoduj</button></p> 
-					<p>Liczba bitów: <input type="number" step="1" min="1" max="64" width="20" > <button type="button" class="ml-2 mb-2 btn btn-primary">Zakłóć</button> </p>
-					<p>Dane zakodowane po korekcji: <span></span> </p>
-					<p>Dane wyjściowe: <span></span> </p>
+					<p>Dane zakodowane: <span id="daneZakodowane"></span> <button type="button" id="btnDekoduj" class="ml-2 mb-2 btn btn-primary">Dekoduj</button></p> 
+					<p>Liczba bitów: <input id='inputZak' type="number" step="1" min="1" max="64" width="20" > <button id="btnZak" type="button" class="ml-2 mb-2 btn btn-primary">Zakłóć</button> </p>
+					<p>Dane zakodowane po korekcji: <span id="danePoKorekcji"></span> </p>
+					<p>Dane wyjściowe: <span class="" id="daneWyjściowe"></span> </p>
 				</div>
 				<div class="col-12 py-4 border-bottom border-dark">
 					<h2>Podsumowanie</h2>
-					<p>Przesłane bity danych: <span></span></p> 
-					<p>Przesłane bity kontrolne: <span></span> </p>
-					<p>Błędy wykryte: <span></span> </p>
-					<p>Błędy skorygowane:  <span></span> </p>
-					<p>Błędy niewykryte: <span></span></p>
+					<p>Przesłane bity danych: <span id='przeslaneBity'></span></p> 
+					<p>Przesłane bity kontrolne: <span id='przeslaneBitykontrolne'></span> </p>
+					<p>Błędy wykryte: <span id='bledyWykryteBity'></span> </p>
+					<p>Błędy skorygowane:  <span id='bledyskorygowane'></span> </p>
+					<p>Błędy niewykryte: <span id='bledyniewykryte'></span></p>
 				</div>
 				<div class="col-12 py-4 legend" >
 					<h2>Legenda</h2>

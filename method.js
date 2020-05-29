@@ -30,6 +30,75 @@ $(document).ready(function(){
        } 
    });
 
+   $('#btnDekoduj').click(function(){
+
+    let dane = $('#inputDane').val();
+    let daneZakodowane = $('#daneZakodowane').text();
+  
+        var metoda;
+       if($('#daneZakodowane').text()!=''){
+        
+            daneZakodowane=stringToArray(daneZakodowane);
+            dane= stringToArray(dane);
+            $('.asd a').each(function(){
+                if($(this).hasClass('active'))
+                metoda=$(this).attr('id');
+            });
+            switch(metoda) {
+                case 'kontrola':
+                    fixKontrolaParzystosci(daneZakodowane)
+                break;
+                case 'hamming':
+                    fixKodowanieHamminga(daneZakodowane)
+                break;
+                case 'crc':
+                    fixCrc(daneZakodowane)
+                break;
+                default:
+                // code block
+            }
+
+            switch(metoda) {
+                case 'kontrola':
+                    dekodujKontrolaParzystosci(daneZakodowane)
+                break;
+                case 'hamming':
+                    dekodujKodowanieHamminga(daneZakodowane)
+                break;
+                case 'crc':
+                    dekodujCrc(daneZakodowane)
+                break;
+                default:
+                // code block
+            }
+       } 
+   });
+
+   $('#btnZak').click(function(){
+     let ileZaklocen = $('#inputZak').val();
+     let dane = $('#daneZakodowane1').text();
+    
+     dane = stringToArray(dane);
+     dane2 = stringToArray(dane);
+     ile=0;
+     while(ile<ileZaklocen){
+        position = Math.floor((Math.random() * dane.length));
+        if(dane[position]===dane2[position]){
+            if(dane[position]===1){
+                dane[position]=0;
+            }else{
+                dane[position]=1;
+            }
+            ile++;
+            //console.log(ile)
+        }
+     }
+    
+     $('#daneZakodowane').text(dane.join(''));
+     $('#danePoKorekcji').text('');
+     $('#daneWyjściowe').text('');
+   })
+
    /*Funkcja generuję ranodomowy ciąg bitów i wpisuje do inputa*/
     function generateRadnomCode(){
         let amount = $('#inputIle').val();
