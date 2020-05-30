@@ -104,6 +104,7 @@ class Crc {
         var n = l - this.keyLength;
         let dane = new Array(n);
         for (var i = 0; i < n; i++) dane[i] = coded_data[i + this.keyLength];
+        $('#daneWyjściowe').text(dane.join(''));
     }
 
     /* korekcja */
@@ -123,6 +124,33 @@ class Crc {
             for (var i = 0; i < this.keyLength; i++) type[i] = 5;
             for (var i = this.keyLength; i < l; i++) type[i] = 2;
         }
+        let html=''
+        for(let i =0;i<coded_data.length;i++){
+            if(type[i]===0){
+                html+='<span class="bg-success">'+coded_data[i]+'</span>';
+            }else if(type[i]===1){
+                html+='<span class="bg-danger">'+coded_data[i]+'</span>';
+            }else if(type[i]===2){
+                html+='<span class="bg-warning">'+coded_data[i]+'</span>';
+            }
+            else if(type[i]===3){
+                html+='<span class="bg-primary">'+coded_data[i]+'</span>';
+            }else if(type[i]===4){
+                html+='<span class="bg-dark">'+coded_data[i]+'</span>';
+            }else if(type[i]===5){
+                html+='<span class="bg-secondary">'+coded_data[i]+'</span>';
+            }
+    
+        }
+        var fixed = 0;
+        for (var i = 0; i < type.length; i++)
+        {
+                if (type[i]===1 || type[i]===4) fixed++;
+        }
+        $('#bledyskorygowane').text(fixed)
+
+        $('#danePoKorekcji').html(html);
+        $('#przeslaneBity').text($('#inputDane').val().length)
         $('#bledyniewykryte').text(nZamienionych-errors)
         $('#bledyWykryteBity').text(errors)
     }

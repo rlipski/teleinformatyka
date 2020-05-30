@@ -72,7 +72,6 @@ function dekodujKodowanieHamminga(coded_data){
         }
         else redundancy++;
     }
-    console.log(dane);
     $('#daneWyjściowe').text(dane.join(''));
 }
 
