@@ -157,6 +157,14 @@ function fixKodowanieHamminga(coded_data){
     }
     $('#danePoKorekcji').html(html);
     $('#przeslaneBity').text($('#inputDane').val().length)
+    $('#bledyWykryteBity').text(errors)
+    $('#bledyniewykryte').text(nZamienionych-errors)
+    var fixed = 0;
+    for (var i = 0; i < type.length; i++)
+    {
+            if (type[i]===1 || type[i]===4) fixed++;
+    }
+    $('#bledyskorygowane').text(fixed)
 }
 
 

@@ -1,3 +1,4 @@
+var nZamienionych=0
 $(document).ready(function(){
 
    $("#btnGeneruj").click(function(){
@@ -41,6 +42,13 @@ $(document).ready(function(){
               // code block
           }
        }
+       $('#przeslaneBity').text('')
+       $('#przeslaneBitykontrolne').text('')
+       $('#bledyWykryteBity').text('')
+       $('#bledyskorygowane').text('')
+       $('#bledyniewykryte').text('')
+       $('#danePoKorekcji').text('')
+       $('#daneWyjściowe').text('')
    });
 
    $('#btnDekoduj').click(function(){
@@ -110,12 +118,14 @@ $(document).ready(function(){
                 // code block
             }
        }
+       $('#przeslaneBitykontrolne').text(daneZakodowane.length-dane.length)
+       
    });
-
+   
    $('#btnZak').click(function(){
      let ileZaklocen = $('#inputZak').val();
      let dane = $('#daneZakodowane1').text();
-
+     nZamienionych=ileZaklocen;
      dane = stringToArray(dane);
      dane2 = stringToArray(dane);
      ile=0;

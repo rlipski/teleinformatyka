@@ -123,6 +123,8 @@ class Crc {
             for (var i = 0; i < this.keyLength; i++) type[i] = 5;
             for (var i = this.keyLength; i < l; i++) type[i] = 2;
         }
+        $('#bledyniewykryte').text(nZamienionych-errors)
+        $('#bledyWykryteBity').text(errors)
     }
 
 }
