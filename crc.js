@@ -2,7 +2,7 @@ class Crc {
     constructor(algorithm) {
         switch (algorithm) {
             case '12':
-                this.klucz = 0x18005;
+                this.klucz = 0x80F;
                 this.keyLength = 12;
             break;
             case '16':
@@ -14,7 +14,7 @@ class Crc {
                 this.keyLength = 32;
             break;
             case 'SDLC':
-                this.klucz = 0x18005;
+                this.klucz = 0x1021;
                 this.keyLength = 16;
             break;
         }
@@ -140,7 +140,7 @@ class Crc {
             }else if(type[i]===5){
                 html+='<span class="bg-secondary">'+coded_data[i]+'</span>';
             }
-    
+
         }
         var fixed = 0;
         for (var i = 0; i < type.length; i++)
